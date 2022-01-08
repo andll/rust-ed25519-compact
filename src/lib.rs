@@ -59,10 +59,10 @@
     clippy::suspicious_arithmetic_impl,
     clippy::identity_op
 )]
-mod curve25519;
-mod ed25519;
-mod error;
-mod sha512;
+pub mod curve25519;
+pub mod ed25519;
+pub mod error;
+pub mod sha512;
 
 #[cfg(feature = "pem")]
 mod pem;
