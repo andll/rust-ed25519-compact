@@ -8,7 +8,7 @@ pub type fiat_25519_u1 = u8;
 pub type fiat_25519_i1 = i8;
 pub type fiat_25519_i2 = i8;
 
-#[inline]
+#[inline(never)]
 pub fn fiat_25519_addcarryx_u51(
     out1: &mut u64,
     out2: &mut fiat_25519_u1,
@@ -23,7 +23,7 @@ pub fn fiat_25519_addcarryx_u51(
     *out2 = x3;
 }
 
-#[inline]
+#[inline(never)]
 pub fn fiat_25519_subborrowx_u51(
     out1: &mut u64,
     out2: &mut fiat_25519_u1,
@@ -39,7 +39,7 @@ pub fn fiat_25519_subborrowx_u51(
     *out2 = ((0x0_i8.wrapping_sub((x2 as fiat_25519_i2))) as fiat_25519_u1);
 }
 
-#[inline]
+#[inline(never)]
 pub fn fiat_25519_cmovznz_u64(out1: &mut u64, arg1: fiat_25519_u1, arg2: u64, arg3: u64) {
     let x1: fiat_25519_u1 = (!(!arg1));
     let x2: u64 = (((((0x0_i8.wrapping_sub((x1 as fiat_25519_i2))) as fiat_25519_i1) as i128)
